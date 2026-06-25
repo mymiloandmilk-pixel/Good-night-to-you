@@ -1,0 +1,182 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Good Night 🌙</title><style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    overflow:hidden;
+    height:100vh;
+    background:linear-gradient(to bottom,#050816,#16213e);
+    font-family:Arial,sans-serif;
+}
+
+h1{
+    position:absolute;
+    top:70px;
+    width:100%;
+    text-align:center;
+    color:white;
+    font-size:55px;
+    animation:glow 2s infinite alternate;
+}
+
+p{
+    position:absolute;
+    top:140px;
+    width:100%;
+    text-align:center;
+    color:white;
+    font-size:22px;
+}
+
+@keyframes glow{
+    from{
+        text-shadow:0 0 10px white;
+    }
+    to{
+        text-shadow:0 0 30px cyan;
+    }
+}
+
+.moon{
+    position:absolute;
+    top:40px;
+    right:80px;
+    font-size:100px;
+    animation:moonFloat 4s infinite ease-in-out;
+}
+
+@keyframes moonFloat{
+    50%{
+        transform:translateY(-15px);
+    }
+}
+
+.star{
+    position:absolute;
+    color:white;
+    animation:twinkle 2s infinite;
+}
+
+@keyframes twinkle{
+    50%{
+        opacity:0.2;
+    }
+}
+
+.snow{
+    position:absolute;
+    color:white;
+    animation:fall linear infinite;
+}
+
+@keyframes fall{
+    from{
+        transform:translateY(-20px);
+    }
+    to{
+        transform:translateY(110vh);
+    }
+}
+
+.bear{
+    position:absolute;
+    bottom:40px;
+    font-size:90px;
+}
+
+.polar{
+    animation:walkRight 12s infinite alternate linear;
+}
+
+.brown{
+    animation:walkLeft 14s infinite alternate linear;
+}
+
+@keyframes walkRight{
+    from{left:20px;}
+    to{left:70%;}
+}
+
+@keyframes walkLeft{
+    from{right:20px;}
+    to{right:70%;}
+}
+
+.heart{
+    position:absolute;
+    color:pink;
+    font-size:25px;
+    animation:floatUp 5s infinite linear;
+}
+
+@keyframes floatUp{
+    from{
+        transform:translateY(0);
+        opacity:1;
+    }
+    to{
+        transform:translateY(-200px);
+        opacity:0;
+    }
+}
+</style></head><body><div class="moon">🌙</div><h1>Good Night 🌙</h1>
+<p>Sweet dreams and have a peaceful night ✨</p><div class="bear polar">🐻‍❄️</div>
+<div class="bear brown">🐻</div><script>
+
+// bintang
+for(let i=0;i<40;i++){
+    let star=document.createElement("div");
+    star.className="star";
+    star.innerHTML=Math.random()>0.5?"⭐":"✨";
+
+    star.style.left=Math.random()*100+"vw";
+    star.style.top=Math.random()*60+"vh";
+
+    document.body.appendChild(star);
+}
+
+// salju
+for(let i=0;i<60;i++){
+    let snow=document.createElement("div");
+    snow.className="snow";
+    snow.innerHTML="❄️";
+
+    snow.style.left=Math.random()*100+"vw";
+    snow.style.animationDuration=
+        (4+Math.random()*6)+"s";
+
+    snow.style.fontSize=
+        (10+Math.random()*15)+"px";
+
+    document.body.appendChild(snow);
+}
+
+// hati terbang
+setInterval(()=>{
+    let heart=document.createElement("div");
+
+    heart.className="heart";
+    heart.innerHTML="💖";
+
+    heart.style.left=
+        (20+Math.random()*60)+"vw";
+
+    heart.style.bottom="100px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },5000);
+
+},800);
+
+</script></body>
+  </html>
